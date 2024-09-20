@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nome1 Sobrenome1 e Nome2 Sobrenome2" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Git: Configuração de repositório local e remoto - Relatório de GSI</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Git: Configura\u00e7\u00e3o de reposit\u00f3rio local e remoto";
+        var mkdocs_page_input_path = "git/repo-local-remoto.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Relatório de GSI
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Início</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Git: Configuração de repositório local e remoto</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#criacao-de-repositorio-no-github">Criação de repositório no GitHub</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#criacao-de-repositorio-na-oulu">Criação de repositório na Oulu</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sincronizacao-entre-repositorio-da-oulu-e-o-do-github">Sincronização entre repositório da Oulu e o do GitHub</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#encerramento-da-sessao-do-github-cli">Encerramento da sessão do GitHub CLI</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../samba/instalacao/">Instalação do SAMBA</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../dns/registros-a/">Registros de Recurso do DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../ldap/dn-ifrn/">Explicação de seu DN do LDAP no IFRN</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Relatório de GSI</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Git: Configuração de repositório local e remoto</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="git-configuracao-de-repositorio-local-e-remoto">Git: Configuração de repositório local e remoto</h1>
+<ol>
+<li>Acesse a máquina <code>oulu</code> <a href="http://oulu/acesso/rdp/">via RDP</a></li>
+<li>Entre no GSA a partir de um navegador web do Windows (URL: <a href="http://jurandy.net/gsa">jurandy.net/gsa</a>)</li>
+<li>No Windows, autentique-se no site do GitHub: (<a href="https://github.com/login/">github.com/login</a>)</li>
+<li>No Windows, acesse a URL para autenticação de dispositivos: <a href="https://github.com/login/device">github.com/login/device</a></li>
+<li>
+<p>Na Oulu, execute o comando: <code>gh auth login</code></p>
+</li>
+<li>
+<p>Pressione a tecla <kdb>Enter</kbd> várias vezes até aparecer um código de 8 caracteres</p>
+</li>
+<li>
+<p>Copie ou digite o código do passo 5, executado na Oulu, para a URL do passo 4, no Windows.</p>
+</li>
+</ol>
+<h2 id="criacao-de-repositorio-no-github">Criação de repositório no GitHub</h2>
+<p>Execute os seguintes comandos:</p>
+<ol>
+<li><code>gh auth status</code></li>
+<li><code>gh repo create gsi-rel</code></li>
+</ol>
+<h2 id="criacao-de-repositorio-na-oulu">Criação de repositório na Oulu</h2>
+<p>Execute os seguintes comandos:</p>
+<ol>
+<li><code>type -f take</code></li>
+<li><code>type -f takedir</code></li>
+<li><code>take /srv/tsi5/repo/NOME</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><code>git init .</code></li>
+<li><code>touch README.md</code></li>
+<li><code>git add .</code></li>
+<li><code>git status</code></li>
+<li><code>git commit -m "MENSAGEM"</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li><code>git branch</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+<li><code>git branch -m main</code></li>
+</ol>
+<h2 id="sincronizacao-entre-repositorio-da-oulu-e-o-do-github">Sincronização entre repositório da Oulu e o do GitHub</h2>
+<ol>
+<li><code>git remote -v</code></li>
+<li><code>git remote add origin URL</code><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+<li><code>git push -u origin main</code></li>
+</ol>
+<h2 id="encerramento-da-sessao-do-github-cli">Encerramento da sessão do GitHub CLI</h2>
+<ol>
+<li><code>gh auth</code></li>
+<li><code>gh auth status</code></li>
+<li><code>gh auth logout</code></li>
+<li><code>gh auth status</code></li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Substitua <code>NOME</code> por seu primeiro nome, com letras minúsculas e sem acento.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Digite uma mensagem para registrar o que você fez.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Verifique se a ramificação (<em>branch</em>) está com o nome <code>main</code>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>A URL da Home Page de seu repositório do GitHub. Geralmente terminal com <code>.git</code>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Início"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../samba/instalacao/" class="btn btn-neutral float-right" title="Instalação do SAMBA">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../samba/instalacao/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

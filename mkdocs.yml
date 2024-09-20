@@ -1,6 +1,6 @@
 site_name: Relatório de GSI
 site_author: Nome1 Sobrenome1 e Nome2 Sobrenome2
-site_dir: /var/www/html/
+#site_dir: /var/www/html/
 
 theme: 
   name: readthedocs

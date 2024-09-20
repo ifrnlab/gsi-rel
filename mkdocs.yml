@@ -1,6 +1,8 @@
 site_name: Relatório de GSI
 site_author: Nome1 Sobrenome1 e Nome2 Sobrenome2
 #site_dir: /var/www/html/
+repo_url: https://ifrnlab.github.io/gsi-rel/
+
 
 theme: 
   name: readthedocs
@@ -8,6 +10,7 @@ theme:
 
 nav:
   - index.md
+  - git/repo-local-remoto.md
   - samba/instalacao.md
   - dns/registros-a.md
   - ldap/dn-ifrn.md

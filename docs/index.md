@@ -1,5 +1,6 @@
 # Início
 
+- [Git: configuração de repositório local e remoto](git/repo-local-remoto.md)
 - [Instalação do SAMBA](samba/instalacao.md)
 - [Registros de Recurso do DNS](dns/registros-a.md)
 - [Explicação de seu DN do LDAP no IFRN](ldap/dn-ifrn.md)

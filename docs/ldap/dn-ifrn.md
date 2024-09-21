@@ -4,7 +4,7 @@ Pontuação: [30 pontos][^1]
 
 !!! warning
 
-    Esta tarefa valerá 40 pontos se escrita à mão em folha pautada e entregue como um único PDF, conforme as instruções da seção sobre digitalização.
+    Esta tarefa valerá 40 pontos se escrita à mão em folha pautada e entregue como um único arquivo PDF, conforme as instruções da seção sobre digitalização.
 
 Explique o DN[^1] de seu usuário na árvore DIT do LDAP. 
 

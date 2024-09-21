@@ -14,8 +14,9 @@ Dica:
 
 !!! note "Dica de *prompt* para o [ChatGPT](https://chatgpt.com)" 
 
-    Como instalar um servidor Samba como controlador de domínio do *ActiveDirectory*. O sistema operacional é o Alpine Linux. O domínio "<estado>.lab".
+    Como instalar um servidor Samba como controlador de domínio do *ActiveDirectory*. O sistema operacional é o Alpine Linux. O domínio é `<estado>.lab` e o nome totalmente qualificado (FQDN) do servidor é `<capital>.<estado>.lab`.
+
 
 !!! warning "Aviso"
 
-    Você e seu colega de grupo são responsáveis pela documentação, isto é, vocês devem verificar se a documentação gerada pelo ChatGPT ou por qualquer outro assistente de inteligência virtual está correta.
+    Você e seu colega de grupo são responsáveis pela documentação. Vocês devem verificar se a documentação gerada pelo ChatGPT está correta e de acordo com o que vocês implantaram nos laboratórios da disciplina.
